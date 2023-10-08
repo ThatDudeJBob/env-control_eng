@@ -2,16 +2,16 @@
   <el-config-provider :locale="locale">
     <div class="content-wrapper">
       <div class="select-wrapper">
-        <el-select v-model="selectedEnvFile" placeholder="请选择一份环境变量" style="flex: 1">
+        <el-select v-model="selectedEnvFile" placeholder="Please select an environment variable" style="flex: 1">
           <el-option v-for="file in fileLlist" :key="file.id" :label="file.name || '默认(.env)'" :value="file.id" />
         </el-select>
-        <el-input v-model="fileName" placeholder="请输入文件名" style="width: 340px; margin-left: 15px">
+        <el-input v-model="fileName" placeholder="Please enter a file name" style="width: 340px; margin-left: 15px">
           <template #prepend>
             <span class="cutomer-prepend">.env.</span>
           </template>
           <template #append>
             <el-button type="primary" class="customer" :disabled="envData.some((it) => it.isEdit) || !fileName" @click="create"
-              >点击添加文件</el-button
+              >Click to add files</el-button
             >
           </template>
         </el-input>
@@ -19,7 +19,7 @@
           <el-button type="danger" style="margin-left: 5px">更多</el-button>
           <template #dropdown>
             <el-dropdown-menu>
-              <el-dropdown-item @click="removeFile">删除当前文件</el-dropdown-item>
+              <el-dropdown-item @click="removeFile">Delete the current document</el-dropdown-item>
             </el-dropdown-menu>
           </template>
         </el-dropdown>
@@ -27,7 +27,7 @@
 
       <div class="table-wrapper">
         <div class="total-wrapper">
-          <div style="flex: 1">共有 {{ total }} 条数据，已选中 {{ multipleSelection.length }} 个</div>
+          <div style="flex: 1">Share {{ total }} piece of data, selected {{ multipleSelection.length }} indivual</div>
           <el-button
             @click="batchRemove"
             type="text"
@@ -47,13 +47,13 @@
           <el-table-column
             width="100"
             type="type"
-            label="类型"
+            label="type"
             column-key="type"
             :filters="[
-              { text: '变量', value: 'variable' },
-              { text: '注释', value: 'annotation' },
-              { text: '文本', value: 'text' },
-              { text: '空白', value: 'blank' },
+              { text: 'variable', value: 'variable' },
+              { text: 'Comment', value: 'annotation' },
+              { text: 'text', value: 'text' },
+              { text: 'Blank', value: 'blank' },
             ]"
             :filtered-value="filteredValue"
             :filter-method="(value, row) => row.type === value"
