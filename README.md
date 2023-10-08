@@ -1,23 +1,23 @@
-# 环境变量控制器
+# Environment Variable Controller
 
-可以对目录中的环境变量文件进行便携管理，包括：
+Environment variable files in the directory can be managed portably, including:
 
-- 查看、新增、删除环境变量文件
-- 修改、添加变量
-- 删除文件内容
+- View, add, and delete environment variable files
+- Modify and add variables
+- Delete file contents
 
-## 用例
+## Use cases
 
-![demo.gif](https://s2.loli.net/2022/05/16/cUyRP1BzkGVlaCQ.gif)
+! [demo.gif] (https://s2.loli.net/2022/05/16/cUyRP1BzkGVlaCQ.gif)
 
-## 运行插件
+## Run the plugin
 
-- `ctrl + p` 打开命令面板
-- 输入 `Env Control` 启动插件
+- 'Ctrl + P' to open the Command Palette
+- Enter 'Env Control' to launch the plugin
 
-## 其他
+## Other
 
-插件只能捕获符合 `.env.[文件名]` 形式的环境变量文件
+Plugins can only capture compliant '.env. [filename]' type environment variable file
 
 - .env.development ✔
 - .env.product.local ✔
